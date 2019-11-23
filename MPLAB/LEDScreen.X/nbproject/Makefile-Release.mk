@@ -13,8 +13,8 @@ ifeq "${IGNORE_LOCAL}" "TRUE"
 else
 include Makefile
 # Include makefile containing local settings
-ifeq "$(wildcard nbproject/Makefile-local-Debug.mk)" "nbproject/Makefile-local-Debug.mk"
-include nbproject/Makefile-local-Debug.mk
+ifeq "$(wildcard nbproject/Makefile-local-Release.mk)" "nbproject/Makefile-local-Release.mk"
+include nbproject/Makefile-local-Release.mk
 endif
 endif
 
@@ -25,7 +25,7 @@ MV=mv
 CP=cp 
 
 # Macros
-CND_CONF=Debug
+CND_CONF=Release
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
@@ -88,7 +88,7 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-Debug.mk dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-Release.mk dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=32MZ2048ECM064
 MP_LINKER_FILE_OPTION=
@@ -117,74 +117,74 @@ ${OBJECTDIR}/_ext/1787047461/main.o: ../../Source/main.cpp  nbproject/Makefile-$
 	@${MKDIR} "${OBJECTDIR}/_ext/1787047461" 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/main.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/main.o.d" -o ${OBJECTDIR}/_ext/1787047461/main.o ../../Source/main.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/main.o.d" -o ${OBJECTDIR}/_ext/1787047461/main.o ../../Source/main.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1787047461/Screen.o: ../../Source/Screen.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1787047461" 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/Screen.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/Screen.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/Screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/Screen.o.d" -o ${OBJECTDIR}/_ext/1787047461/Screen.o ../../Source/Screen.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/Screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/Screen.o.d" -o ${OBJECTDIR}/_ext/1787047461/Screen.o ../../Source/Screen.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/LargeHeart.o: ../../Source/Images/LargeHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/LargeHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/LargeHeart.o ../../Source/Images/LargeHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/LargeHeart.o ../../Source/Images/LargeHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/MediumHeart.o: ../../Source/Images/MediumHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/MediumHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/MediumHeart.o ../../Source/Images/MediumHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/MediumHeart.o ../../Source/Images/MediumHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/SmallHeart.o: ../../Source/Images/SmallHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/SmallHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/SmallHeart.o ../../Source/Images/SmallHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/SmallHeart.o ../../Source/Images/SmallHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/NoHeart.o: ../../Source/Images/NoHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/NoHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/NoHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/NoHeart.o ../../Source/Images/NoHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/NoHeart.o ../../Source/Images/NoHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 else
 ${OBJECTDIR}/_ext/1787047461/main.o: ../../Source/main.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1787047461" 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/main.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/main.o.d" -o ${OBJECTDIR}/_ext/1787047461/main.o ../../Source/main.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/main.o.d" -o ${OBJECTDIR}/_ext/1787047461/main.o ../../Source/main.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1787047461/Screen.o: ../../Source/Screen.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1787047461" 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/Screen.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1787047461/Screen.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/Screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/Screen.o.d" -o ${OBJECTDIR}/_ext/1787047461/Screen.o ../../Source/Screen.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1787047461/Screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1787047461/Screen.o.d" -o ${OBJECTDIR}/_ext/1787047461/Screen.o ../../Source/Screen.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/LargeHeart.o: ../../Source/Images/LargeHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/LargeHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/LargeHeart.o ../../Source/Images/LargeHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/LargeHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/LargeHeart.o ../../Source/Images/LargeHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/MediumHeart.o: ../../Source/Images/MediumHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/MediumHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/MediumHeart.o ../../Source/Images/MediumHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/MediumHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/MediumHeart.o ../../Source/Images/MediumHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/SmallHeart.o: ../../Source/Images/SmallHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/SmallHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/SmallHeart.o ../../Source/Images/SmallHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/SmallHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/SmallHeart.o ../../Source/Images/SmallHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 ${OBJECTDIR}/_ext/1181532492/NoHeart.o: ../../Source/Images/NoHeart.cpp  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1181532492" 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/NoHeart.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1181532492/NoHeart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -I"../../Include" -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/NoHeart.o ../../Source/Images/NoHeart.cpp   -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -frtti -fexceptions -fno-check-new -fenforce-eh-specs -O2 -funroll-loops -I"../../Include" -Werror -Wall -MMD -MF "${OBJECTDIR}/_ext/1181532492/NoHeart.o.d" -o ${OBJECTDIR}/_ext/1181532492/NoHeart.o ../../Source/Images/NoHeart.cpp   -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 endif
 
@@ -193,12 +193,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CPPC} $(MP_EXTRA_LD_PRE) -g -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x27F   -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=__MPLAB_DEBUGGER_PK3=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
+	${MP_CPPC} $(MP_EXTRA_LD_PRE) -g -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x27F   -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=__MPLAB_DEBUGGER_PK3=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CPPC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_Debug=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
+	${MP_CPPC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_Release=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
 	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/LEDScreen.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
@@ -212,8 +212,8 @@ endif
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
-	${RM} -r build/Debug
-	${RM} -r dist/Debug
+	${RM} -r build/Release
+	${RM} -r dist/Release
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

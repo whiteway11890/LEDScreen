@@ -12,7 +12,7 @@
 #pragma config PGL1WAY = ON             // Permission Group Lock One Way Configuration (Allow only one reconfiguration)
 #pragma config PMDL1WAY = ON            // Peripheral Module Disable Configuration (Allow only one reconfiguration)
 #pragma config IOL1WAY = ON             // Peripheral Pin Select Configuration (Allow only one reconfiguration)
-#pragma config FUSBIDIO = ON            // USB USBID Selection (Controlled by the USB Module)
+#pragma config FUSBIDIO = OFF           // USB USBID Selection (Controlled by the USB Module)
 
 // DEVCFG2
 #pragma config FPLLIDIV = DIV_1         // System PLL Input Divider (1x Divider)
@@ -27,17 +27,17 @@
 #pragma config FNOSC = SPLL             // Oscillator Selection Bits (System PLL)
 #pragma config DMTINTV = WIN_127_128    // DMT Count Window Interval (Window/Interval value is 127/128 counter value)
 #pragma config FSOSCEN = OFF            // Secondary Oscillator Enable (Disable SOSC)
-#pragma config IESO = ON                // Internal/External Switch Over (Enabled)
+#pragma config IESO = OFF               // Internal/External Switch Over (Enabled)
 #pragma config POSCMOD = OFF            // Primary Oscillator Configuration (Primary osc disabled)
 #pragma config OSCIOFNC = OFF           // CLKO Output Signal Active on the OSCO Pin (Disabled)
 #pragma config FCKSM = CSECME           // Clock Switching and Monitor Selection (Clock Switch Enabled, FSCM Enabled)
 #pragma config WDTPS = PS1048576        // Watchdog Timer Postscaler (1:1048576)
 #pragma config WDTSPGM = STOP           // Watchdog Timer Stop During Flash Programming (WDT stops during Flash programming)
 #pragma config WINDIS = NORMAL          // Watchdog Timer Window Mode (Watchdog Timer is in non-Window mode)
-#pragma config FWDTEN = ON              // Watchdog Timer Enable (WDT Enabled)
+#pragma config FWDTEN = OFF             // Watchdog Timer Enable (WDT Disabled)
 #pragma config FWDTWINSZ = WINSZ_25     // Watchdog Timer Window Size (Window size is 25%)
 #pragma config DMTCNT = DMT31           // Deadman Timer Count Selection (2^31 (2147483648))
-#pragma config FDMTEN = ON              // Deadman Timer Enable (Deadman Timer is enabled)
+#pragma config FDMTEN = OFF             // Deadman Timer Enable (Deadman Timer is enabled)
 
 // DEVCFG0
 #pragma config DEBUG = OFF              // Background Debugger Enable (Debugger is disabled)
@@ -60,19 +60,65 @@
 //Include BSP first for config bits
 #include "LEDBoard/BSP.hpp"
 #include <cstdlib>
+#include <xc.h>
 
 #include "LEDBoard/Screen.hpp"
-
-using namespace std;
 
 /*
  * 
  */
+extern uint8_t largeHeart[32*32*3];
+extern uint8_t mediumHeart[32*32*3];
+extern uint8_t smallHeart[32*32*3];
+extern uint8_t blank[32*32*3];
+
+uint8_t screenToUse = 1;
+
+void updateScreen(uint8_t screen)
+{
+    switch(screen){
+        case 1: 
+            setScreen(smallHeart);
+            break;
+        case 2: 
+            setScreen(mediumHeart);
+            break;
+        case 3:
+            setScreen(largeHeart);
+            break;
+        default:
+            setScreen(blank);
+            break;
+    }
+}
+
 int main(int argc, char** argv) {
 
+    INTCONbits.MVEC = 1; //Multivector mode
     initializeScreen();
     
+    ANSELBbits.ANSB14 = 0;
+    ANSELBbits.ANSB13 = 0;
+    TRISBbits.TRISB14 = 1;
+    TRISBbits.TRISB13 = 1;
+    
+    CNPDBbits.CNPDB14 = 1;
+    CNPDBbits.CNPDB13 = 1;
+    
+    //Enable interrupts
+    asm("ei");
+    
+    setScreen(smallHeart);
+    
     while(true){
+        
+        uint8_t screenSetting = (PORTB >> 13) & 0x3;
+        
+        if(screenSetting != screenToUse){
+            screenToUse = screenSetting;
+            updateScreen(screenToUse);
+        }
+        
         drawScreen();        
     }
     return 0;

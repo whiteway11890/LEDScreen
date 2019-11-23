@@ -13,6 +13,7 @@
 void initializeDiscreteIO(void);
 void initializeScreen(void);
 void drawScreen(void);
+void setScreen(uint8_t * ptr);
 
 #endif	/* SCREEN_HPP */
 
